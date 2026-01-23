@@ -1,26 +1,56 @@
 @import "tailwindcss";
 
+/* =========================
+   LIGHT (default) - :root
+   ========================= */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #fcfcff;  /* blanco limpio, menos flash que #fff */
+  --foreground: #0b0f1a;  /* casi negro */
+
+  --card: #ffffff;
+  --card-2: #f6f7fb;      /* opcional: secciones suaves */
+  --border: #e6e8f0;
+
+  --muted: #5b6477;       /* texto secundario */
+}
+
+/* =========================
+   DARK - html.dark
+   ========================= */
+html.dark {
+  --background: #070a12;
+  --foreground: #e7edf5;
+
+  --card: rgba(231, 237, 245, 0.05);
+  --card-2: rgba(231, 237, 245, 0.03);
+  --border: rgba(231, 237, 245, 0.12);
+
+  --muted: rgba(231, 237, 245, 0.72);
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-sans: var(--font-sans);
+  --font-mono: var(--font-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
+/* ===== Base ===== */
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans), system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", sans-serif;
+  font-weight: 400;
+  letter-spacing: -0.02em;
+}
+
+h1 {
+  font-weight: 700;
+}
+
+/* ===== Kill glows ===== */
+body::before,
+body::after {
+  content: none;
 }

@@ -1,0 +1,73 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-sans);
+  --font-mono: var(--font-mono);
+}
+
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    /* Dark: negro azulado */
+    --background: #070a12;
+    --foreground: #e7edf5;
+
+    --card: rgba(231, 237, 245, 0.05);
+    --border: rgba(231, 237, 245, 0.12);
+
+    --accent: #8b5cf6;   /* violet-500-ish */
+    --accent-2: #c084fc; /* purple-400-ish */
+  }
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(800px 500px at 50% -10%, rgba(139, 92, 246, 0.28), transparent 60%),
+    radial-gradient(700px 450px at 80% 10%, rgba(192, 132, 252, 0.18), transparent 55%);
+  opacity: 0.9;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans), system-ui, -apple-system,
+    BlinkMacSystemFont, "Segoe UI", sans-serif;
+    font-weight: 400;
+    letter-spacing: -0.02em; /* prueba */
+}
+
+h1 {
+  font-weight: 700;
+}
+
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+
+  background:
+    radial-gradient(
+      900px 600px at 50% 110%,
+      rgba(139, 92, 246, 0.22),
+      transparent 65%
+    ),
+    radial-gradient(
+      700px 500px at 80% 120%,
+      rgba(192, 132, 252, 0.16),
+      transparent 70%
+    );
+
+  opacity: 0.85;
+}

@@ -1,0 +1,66 @@
+@import "tailwindcss";
+
+:root {
+  --background: #fcfcff;
+  --foreground: #0b0f1a;
+
+  --card: #ffffff;
+  --card-2: #f6f7fb;
+  --border: #e6e8f0;
+
+  --muted: #5b6477;
+
+  --accent: #4c1d95;
+  --accent-2: #6d28d9;
+  --accent-ink: #2b0a5a;
+}
+
+/* Destellos: más “tinta” sobre blanco */
+body::before,
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+
+  /* clave: hace que el morado oscuro se vea sin subir alpha */
+  mix-blend-mode: multiply;
+}
+
+body::before {
+  background:
+    radial-gradient(
+      900px 520px at 50% -12%,
+      rgba(76, 29, 149, 0.12),
+      transparent 62%
+    ),
+    radial-gradient(
+      720px 480px at 85% 8%,
+      rgba(43, 10, 90, 0.10),
+      transparent 58%
+    );
+
+  opacity: 0.95;
+}
+
+body::after {
+  background:
+    radial-gradient(
+      1000px 650px at 50% 112%,
+      rgba(109, 40, 217, 0.10),
+      transparent 68%
+    ),
+    radial-gradient(
+      760px 520px at 86% 118%,
+      rgba(76, 29, 149, 0.08),
+      transparent 72%
+    );
+
+  opacity: 0.9;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+}
+

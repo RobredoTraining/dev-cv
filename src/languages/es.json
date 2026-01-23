@@ -1,0 +1,55 @@
+{
+  "home": {
+    "title": "Pablo García Robredo",
+    "subtitle": "Backend / Full Stack · APIs · Sistemas · Redes",
+    "about": {
+      "title": "Sobre mí",
+      "p1": "Soy un desarrollador centrado en el backend que trabaja principalmente con Node.js y API REST, con énfasis en el código mantenible, la depuración y la comprensión del comportamiento de los sistemas en producción. Disfruto diseñando API, modelando datos y razonando sobre casos extremos, en lugar de limitarme a hacer que las cosas «funcionen».",
+      "p2": "Mi experiencia en automatización de control de calidad me proporcionó una base sólida en registros, comunicación HTTP, pruebas de API y análisis de incidencias, lo que influye enormemente en mi enfoque actual del desarrollo backend. Suelo pensar en términos de fiabilidad, escenarios de fallo y cómo las decisiones técnicas afectan a los usuarios reales y a los sistemas de producción.",
+      "p3": "Actualmente, estoy profundizando mis conocimientos sobre backend e infraestructura mediante la creación de proyectos personales, trabajando con Docker, MongoDB y entornos VPS basados en Linux, y reforzando mis conocimientos sobre sistemas y redes para desarrollar con una mentalidad orientada a la producción."
+    },
+    "projects": {
+      "title": "Proyectos",
+      "project": {
+        "title": "Recipe API APP",
+        "subtitle": "Node/Express/Mongo + front React/TS. Arquitectura modular, tipado y refactorización.",
+        "stack": "Stack: Node, Express, MongoDB, React, TS",
+        "button": "Ir al repositorio"
+      }
+    },
+    "contact": {
+      "title": "Envíame un mensaje",
+      "card": {
+        "name": "Nombre",
+        "email": "Tu mail",
+        "message": "Mensaje",
+        "button": "Enviar",
+        "loading": "Enviando...",
+        "success": "¡Mensaje enviado! Te responderé pronto."
+      }
+    },
+    "health": {
+      "title": "Estado del sistema",
+      "recheck": "Revisar",
+      "dash": "—",
+      "status": {
+        "ok": "estado: ok",
+        "error": "estado: error",
+        "checking": "comprobando…"
+      },
+      "timeAgo": {
+        "seconds": "hace {s}s",
+        "minutes": "hace {m}min"
+      }
+    },
+    "links": {
+      "cv": "Descargar CV",
+      "github": "GitHub",
+      "linkedin": "LinkedIn",
+      "email": "Email"
+    },
+    "footer": {
+      "lastUpdate": "Última actualización"
+    }
+  }
+}

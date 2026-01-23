@@ -1,0 +1,56 @@
+{
+    "home": {
+      "title": "Pablo García Robredo",
+      "subtitle": "Backend / Full Stack · APIs · Systems · Networks",
+      "about": {
+        "title": "About me",
+        "p1": "I’m a backend-focused developer working mainly with Node.js and REST APIs, with an emphasis on maintainable code, debugging and understanding how systems behave in production. I enjoy designing APIs, modelling data and reasoning about edge cases rather than just making things “work”.",
+        "p2": "My background in QA Automation gave me a strong foundation in logs, HTTP communication, API testing and incident analysis, which strongly influences how I approach backend development today. I tend to think in terms of reliability, failure scenarios and how technical decisions affect real users and production systems.",
+        "p3": "Currently, I’m deepening my backend and infrastructure skills by building personal projects, working with Docker, MongoDB and Linux-based VPS environments, and reinforcing my knowledge of systems and networking to develop with a production-oriented mindset."
+      },
+      "projects": {
+        "title": "Projects",
+        "project": {
+            "title": "Recipe API APP",
+            "subtitle": "Node/Express/Mongo + front React/TS. Modular architecture, shared types, and refactoring towards hooks. ",
+            "stack": "Stack: Node, Express, MongoDB, React, TS",
+            "button": "Go to repository"
+        }
+      },
+      "contact": {
+      "title": "Send me a message",
+      "card": {
+        "name": "Name",
+        "email": "Your mail",
+        "message": "Message",
+        "button": "Send",
+        "loading": "Sending...",
+        "success": "Message sent! I'll reply shortly."
+      }
+    },
+      "health": {
+        "title": "System status",
+        "recheck": "Re-check",
+        "dash": "—",
+        "status": {
+          "ok": "status: ok",
+          "error": "status: error",
+          "checking": "checking…"
+        },
+        "timeAgo": {
+          "seconds": "{s}s ago",
+          "minutes": "{m}min ago"
+        }
+      },
+      "links": {
+        "cv": "Download CV",
+        "github": "GitHub",
+        "linkedin": "LinkedIn",
+        "email": "Email"
+      },
+      "footer": {
+        "lastUpdate": "Last update"
+      }
+    }
+  }
+  
