@@ -45,18 +45,19 @@ Instala dependencias y arranca el entorno de desarrollo:
 npm install
 npm run dev
 ```
-Scripst disponibles:
+Scripts disponibles:
 
 ```bash
 npm run dev       # desarrollo
 npm run build     # build de producción
 npm run start     # arrancar build
 npm run lint      # lint
+```
 
 La aplicación estará disponible en:
 http://localhost:3000
-```
-Variables de entorno
+
+## Variables de entorno
 Este proyecto requiere variables de entorno para el envío de emails
 y el rate limit del formulario de contacto.
 Crea un archivo .env.local en la raíz del proyecto:
@@ -67,7 +68,7 @@ CONTACT_TO=probredodev@gmail.com
 CONTACT_FROM=onboarding@resend.dev
 
 # Rate limit (Upstash)
-UPSTASH_REDIS_REST_URL=https://xxxxxx.upstash.io
+UPSTASH_REDIS_REST_URL=xxxxxx.upstash.io
 UPSTASH_REDIS_REST_TOKEN=xxxxxxxxxxxxxxxx
 
 El archivo .env.local no debe subirse al repositorio.

@@ -1,8 +1,7 @@
 import { NextResponse } from "next/server";
 import { Resend } from "resend";
+import { contactRatelimit, getIp } from "@/lib/rateLimit";
 
-
-const resend = new Resend(process.env.RESEND_API_KEY);
 
 function isEmail(value: string) {
   return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
@@ -10,6 +9,29 @@ function isEmail(value: string) {
 
 export async function POST(req: Request) {
   try {
+    const ip = getIp(req);
+    const ua = req.headers.get("user-agent") || "";
+
+    const key =
+      ip !== "unknown"
+        ? `contact:${ip}`
+        : `contact:unknown:${ua.slice(0, 80)}`;
+
+    const { success, reset } = await contactRatelimit.limit(key);
+
+
+    if (!success) {
+      return NextResponse.json(
+        { error: "Too many requests. Try again later." },
+        {
+          status: 429,
+          headers: {
+            "Retry-After": Math.ceil((reset - Date.now()) / 1000).toString(),
+          },
+        }
+      );
+    }
+
     const body = await req.json().catch(() => null);
     if (!body) {
       return NextResponse.json({ error: "Invalid JSON" }, { status: 400 });
@@ -71,6 +93,12 @@ export async function POST(req: Request) {
       "Mensaje:",
       messageClean,
     ].join("\n");
+
+    const apiKey = process.env.RESEND_API_KEY;
+    if (!apiKey) {
+      return NextResponse.json({ error: "Missing RESEND_API_KEY" }, { status: 500 });
+    }
+    const resend = new Resend(apiKey);
 
     const { error } = await resend.emails.send({
       from,

@@ -1,27 +1,21 @@
-type Entry = { count: number; resetAt: number };
-const hits = new Map<string, Entry>();
+import { Ratelimit } from "@upstash/ratelimit";
+import { Redis } from "@upstash/redis";
 
-export function rateLimit(ip: string, limit = 3, windowMs = 10 * 60 * 1000) {
-  const now = Date.now();
-  const entry = hits.get(ip);
+const redis = Redis.fromEnv();
 
-  if (!entry || now > entry.resetAt) {
-    hits.set(ip, { count: 1, resetAt: now + windowMs });
-    return { ok: true, remaining: limit - 1 };
-  }
-
-  if (entry.count >= limit) {
-    return { ok: false, remaining: 0, retryAfterMs: entry.resetAt - now };
-  }
-
-  entry.count += 1;
-  hits.set(ip, entry);
-  return { ok: true, remaining: limit - entry.count };
-}
+// 3 intentos cada 10 minutos (como tu versión original)
+export const contactRatelimit = new Ratelimit({
+  redis,
+  limiter: Ratelimit.fixedWindow(3, "10 m"),
+});
 
 export function getIp(req: Request) {
-  // Vercel / proxies suelen mandar x-forwarded-for.
   const xff = req.headers.get("x-forwarded-for");
-  if (xff) return xff.split(",")[0].trim();
+  if (xff) return xff.split(",")[0]?.trim() || "unknown";
+
+  const realIp = req.headers.get("x-real-ip");
+  if (realIp) return realIp.trim();
+
   return "unknown";
 }
+
