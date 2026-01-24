@@ -14,7 +14,7 @@ export const metadata: Metadata = {
     description:
       "Backend, APIs, sistemas y redes. Enfoque en producción y mantenibilidad.",
     type: "website",
-    // cuando tengas OG image:
+    // OG image:
     // images: ["/og.png"],
   },
 };
