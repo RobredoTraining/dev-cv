@@ -12,8 +12,14 @@
         "title": "Projects",
         "project": {
             "title": "Recipe API APP",
-            "subtitle": "Node/Express/Mongo + front React/TS. Modular architecture, shared types, and refactoring towards hooks. ",
+            "subtitle": "CRUD API for editing, saving, and deleting recipes",
             "stack": "Stack: Node, Express, MongoDB, React, TS",
+            "button": "Go to repository"
+        },
+        "project2": {
+            "title": "DEV Portfolio",
+            "subtitle": "Web portfolio with information about my education and current work ",
+            "stack": "Stack: Next JS, React, TS",
             "button": "Go to repository"
         }
       },
@@ -49,7 +55,7 @@
         "email": "Email"
       },
       "footer": {
-        "lastUpdate": "Last update"
+        "lastUpdate": "Last update: 25/01/2026"
       }
     }
   }

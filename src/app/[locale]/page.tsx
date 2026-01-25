@@ -62,16 +62,16 @@ export default async function Home() {
             <div className="grid gap-3">
               <div className="grid gap-3">
                 <LinkCard href="/cv.pdf" label={t("links.cv")} download Icon={Download} />
-                <LinkCard href="https://github.com/tuusuario" label={t("links.github")} Icon={Github} />
+                <LinkCard href="https://github.com/RobredoTraining" label={t("links.github")} Icon={Github} />
               </div>
 
               <div className="grid gap-3">
                 <LinkCard
-                  href="https://www.linkedin.com/in/tuusuario"
+                  href="https://www.linkedin.com/in/pablo-garc%C3%ADa-robredo/"
                   label={t("links.linkedin")}
                   Icon={Linkedin}
                 />
-                <LinkCard href="mailto:tuemail@dominio.com" label={t("links.email")} Icon={Mail} />
+                <LinkCard href="mailto:probredodev@gmail.com" label={t("links.email")} Icon={Mail} />
               </div>
             </div>
           </div>
@@ -110,11 +110,37 @@ export default async function Home() {
 
             <a
               className="rounded-md border border-foreground/15 bg-foreground/5 px-3 py-2 text-sm hover:bg-foreground/10"
-              href="https://github.com/tuusuario/tu-repo"
+              href="https://github.com/RobredoTraining/recipesCrud"
               target="_blank"
               rel="noreferrer"
             >
               {t("projects.project.button")} →
+            </a>
+          </div>
+        </article>
+        <article className="rounded-2xl border border-foreground/10 bg-foreground/5 p-6">
+          <div className="flex items-start justify-between gap-4">
+            <div className="grid gap-2">
+              <h3 className="text-lg font-semibold">
+                {t("projects.project2.title")}
+              </h3>
+
+              <p className="text-foreground/75">
+                {t("projects.project2.subtitle")}
+              </p>
+
+              <p className="text-sm text-foreground/60">
+                {t("projects.project2.stack")}
+              </p>
+            </div>
+
+            <a
+              className="rounded-md border border-foreground/15 bg-foreground/5 px-3 py-2 text-sm hover:bg-foreground/10"
+              href="https://github.com/RobredoTraining/dev-cv"
+              target="_blank"
+              rel="noreferrer"
+            >
+              {t("projects.project2.button")} →
             </a>
           </div>
         </article>
@@ -133,7 +159,7 @@ export default async function Home() {
       </div>
 
       <footer className="mt-12 border-t border-foreground/10 pt-6 text-sm text-foreground/60">
-        {t("footer.lastUpdate")} · Next.js
+        {t("footer.lastUpdate")} 
       </footer>
     </main>
   );
