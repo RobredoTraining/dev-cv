@@ -63,17 +63,17 @@ y el rate limit del formulario de contacto.
 Crea un archivo .env.local en la raíz del proyecto:
 
 
-´´´Email (Resend):
+Email (Resend):
 
 - RESEND_API_KEY=re_xxxxxxxxxxxxxxxxx
-- CONTACT_TO=probredodev@gmail.com
-- CONTACT_FROM=onboarding@resend.dev
+- CONTACT_TO=`probredodev@gmail.com`
+- CONTACT_FROM=`onboarding@resend.dev
 
 Rate limit (Upstash)
 - UPSTASH_REDIS_REST_URL=xxxxxx.upstash.io
 - UPSTASH_REDIS_REST_TOKEN=xxxxxxxxxxxxxxxx
 
-´´´
+
 
 El archivo .env.local no debe subirse al repositorio.
 En producción, estas variables se configuran directamente en Vercel.
