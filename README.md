@@ -67,7 +67,7 @@ Email (Resend):
 
 - RESEND_API_KEY=re_xxxxxxxxxxxxxxxxx
 - CONTACT_TO=`probredodev@gmail.com`
-- CONTACT_FROM=`onboarding@resend.dev
+- CONTACT_FROM=`onboarding@resend.dev` 
 
 Rate limit (Upstash)
 - UPSTASH_REDIS_REST_URL=xxxxxx.upstash.io
