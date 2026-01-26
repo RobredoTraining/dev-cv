@@ -62,8 +62,8 @@ Este proyecto requiere variables de entorno para el envío de emails
 y el rate limit del formulario de contacto.
 Crea un archivo .env.local en la raíz del proyecto:
 
-´´´
-Email (Resend):
+
+´´´Email (Resend):
 
 - RESEND_API_KEY=re_xxxxxxxxxxxxxxxxx
 - CONTACT_TO=probredodev@gmail.com
