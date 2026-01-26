@@ -55,7 +55,7 @@ npm run lint      # lint
 ```
 
 La aplicación estará disponible en:
-http://localhost:3000
+`http://localhost:3000`
 
 ## Variables de entorno
 Este proyecto requiere variables de entorno para el envío de emails
