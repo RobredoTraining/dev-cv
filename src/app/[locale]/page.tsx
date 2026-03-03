@@ -38,6 +38,8 @@ export default async function Home() {
   const locale = await getLocale();
   const t = await getTranslations("home");
 
+  const cvHref = locale === "en" ? "/cv-en.pdf" : "/cv-es.pdf";
+
   return (
     <main className="mx-auto max-w-5xl px-4 py-12">
       <header className="relative border-b border-[color:var(--border)] pb-10">
@@ -61,7 +63,7 @@ export default async function Home() {
             {/* Links */}
             <div className="grid gap-3">
               <div className="grid gap-3">
-                <LinkCard href="/cv.pdf" label={t("links.cv")} download Icon={Download} />
+                <LinkCard href={cvHref} label={t("links.cv")} download Icon={Download} />
                 <LinkCard href="https://github.com/RobredoTraining" label={t("links.github")} Icon={Github} />
               </div>
 
