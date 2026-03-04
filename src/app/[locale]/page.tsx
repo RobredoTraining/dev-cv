@@ -146,6 +146,32 @@ export default async function Home() {
             </a>
           </div>
         </article>
+        <article className="rounded-2xl border border-foreground/10 bg-foreground/5 p-6">
+          <div className="flex items-start justify-between gap-4">
+            <div className="grid gap-2">
+              <h3 className="text-lg font-semibold">
+                {t("projects.project3.title")}
+              </h3>
+
+              <p className="text-foreground/75">
+                {t("projects.project3.subtitle")}
+              </p>
+
+              <p className="text-sm text-foreground/60">
+                {t("projects.project3.stack")}
+              </p>
+            </div>
+
+            <a
+              className="rounded-md border border-foreground/15 bg-foreground/5 px-3 py-2 text-sm hover:bg-foreground/10"
+              href="https://github.com/RobredoTraining/termcoach"
+              target="_blank"
+              rel="noreferrer"
+            >
+              {t("projects.project3.button")} →
+            </a>
+          </div>
+        </article>
       </section>
 
       {/* CONTACTO + ESTADO */}

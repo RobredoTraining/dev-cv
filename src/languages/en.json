@@ -12,13 +12,19 @@
         "title": "Projects",
         "project": {
             "title": "Recipe API APP",
-            "subtitle": "CRUD API for editing, saving, and deleting recipes",
+            "subtitle": "CRUD recipes API to create, edit, save, and delete recipes, designed with scalability in mind (validation, pagination, and a solid foundation for user authentication and role-based permissions).",
             "stack": "Stack: Node, Express, MongoDB, React, TS",
             "button": "Go to repository"
         },
         "project2": {
             "title": "DEV Portfolio",
-            "subtitle": "Web portfolio with information about my education and current work ",
+            "subtitle": "Web portfolio showcasing my developer profile, experience, and projects, focused on clean design, performance, and a structure ready for i18n and future expansions.",
+            "stack": "Stack: Next JS, React, TS",
+            "button": "Go to repository"
+        },
+        "project3": {
+            "title": "Termcoach CLI",
+            "subtitle": "A Command Line Interface that works as a “terminal coach”: it explains common errors, suggests diagnostics, and provides actionable steps to fix them, powered by a recipe-style knowledge base so you learn while troubleshooting. ",
             "stack": "Stack: Next JS, React, TS",
             "button": "Go to repository"
         }
@@ -55,7 +61,7 @@
         "email": "Email"
       },
       "footer": {
-        "lastUpdate": "Last update: 25/01/2026"
+        "lastUpdate": "Last update: 25/02/2026"
       }
     }
   }
