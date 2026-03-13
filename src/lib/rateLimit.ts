@@ -3,7 +3,7 @@ import { Redis } from "@upstash/redis";
 
 const redis = Redis.fromEnv();
 
-// 3 intentos cada 10 minutos (como tu versión original)
+// 3 intentos cada 10 minutos 
 export const contactRatelimit = new Ratelimit({
   redis,
   limiter: Ratelimit.fixedWindow(3, "10 m"),

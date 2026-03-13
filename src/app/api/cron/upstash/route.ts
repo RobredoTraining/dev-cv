@@ -1,6 +1,7 @@
 import { Redis } from "@upstash/redis";
 
 export const runtime = "nodejs";
+
 const redis = Redis.fromEnv();
 
 export async function GET(req: Request) {
@@ -11,11 +12,16 @@ export async function GET(req: Request) {
     return new Response("Unauthorized", { status: 401 });
   }
 
-  
-  // INCR con key temporal
-  const key = `keepalive:${new Date().toISOString().slice(0, 10)}`; // keepalive:YYYY-MM-DD
-  await redis.incr(key);
-  await redis.expire(key, 60 * 60 * 24 * 8); // 8 días
+  const now = new Date().toISOString();
+  const key = `keepalive:${now.slice(0, 10)}`;
 
-  return Response.json({ ok: true });
-}
+  await redis.incr(key);
+  await redis.expire(key, 60 * 60 * 24 * 8);
+  await redis.set("keepalive:lastRun", now);
+
+  return Response.json({
+    ok: true,
+    key,
+    ranAt: now
+  });
+} 
