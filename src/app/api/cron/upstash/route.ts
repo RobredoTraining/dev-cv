@@ -15,9 +15,18 @@ export async function GET(req: Request) {
   const now = new Date().toISOString();
   const key = `keepalive:${now.slice(0, 10)}`;
 
-  await redis.incr(key);
-  await redis.expire(key, 60 * 60 * 24 * 8);
-  await redis.set("keepalive:lastRun", now);
+  try {
+    await redis.incr(key);
+    await redis.expire(key, 60 * 60 * 24 * 8);
+    await redis.set("keepalive:lastRun", now);
 
-  return Response.json({ ok: true, key, ranAt: now });
+    return Response.json({ ok: true, key, ranAt: now });
+  } catch (error) {
+    console.error("Upstash keepalive failed", error);
+
+    return Response.json(
+      { ok: false, error: "Upstash keepalive failed" },
+      { status: 500 }
+    );
+  }
 }
