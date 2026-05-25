@@ -5,10 +5,10 @@ export const runtime = "nodejs";
 const redis = Redis.fromEnv();
 
 export async function GET(req: Request) {
-  const url = new URL(req.url);
-  const secret = url.searchParams.get("secret");
+  const authHeader = req.headers.get("authorization");
+  const expected = `Bearer ${process.env.CRON_SECRET}`;
 
-  if (!secret || secret !== process.env.CRON_SECRET) {
+  if (authHeader !== expected) {
     return new Response("Unauthorized", { status: 401 });
   }
 
@@ -19,9 +19,5 @@ export async function GET(req: Request) {
   await redis.expire(key, 60 * 60 * 24 * 8);
   await redis.set("keepalive:lastRun", now);
 
-  return Response.json({
-    ok: true,
-    key,
-    ranAt: now
-  });
-} 
+  return Response.json({ ok: true, key, ranAt: now });
+}
